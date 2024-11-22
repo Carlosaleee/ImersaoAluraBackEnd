@@ -111,7 +111,7 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ---
 
-Desenvolvido com 💙 por **Carlos Alexandre da Silva** durante a Imersão Alura Back-End.  
+Desenvolvido  por [**Carlos Alexandre da Silva**](https://linktr.ee/CarlosAleee) durante a Imersão Alura Back-End.  
 
 Confira a [Alura](https://www.alura.com.br/) para mais imersões e cursos incríveis!
 
