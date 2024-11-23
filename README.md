@@ -1,45 +1,51 @@
-# Imersão  Alura Back-End - Google Gemini  🚀
+# Imersão Alura Back-End - Google Gemini 🚀
 
-Este repositório contém os projetos e atividades desenvolvidos durante a **Imersão Alura Back-End**, promovida pela Alura. O objetivo principal foi <br>
-aprofundar conhecimentos em desenvolvimento back-end, com foco em boas práticas, estruturação de APIs e integração com bancos de dados.
+Este repositório contém os projetos e atividades desenvolvidos durante a **Imersão Alura Back-End**, promovida pela Alura em parceria com o Google Gemini. O objetivo principal foi aprofundar conhecimentos em desenvolvimento back-end, com foco na estruturação de APIs, integração com bancos de dados, e boas práticas de desenvolvimento.
 
 ---
 
 ## 📋 Tecnologias Utilizadas
 
-- **JavaScript**: Linguagem principal para desenvolvimento back-end.
-- **Spring Boot**: Framework para construção de APIs REST.
-- **MongoDB**: Banco de dados não-relacional.
-- **Hibernate**: ORM (Object-Relational Mapping) para simplificar a manipulação do banco de dados.
-- **Postman**: Ferramenta para teste de APIs.
-- - **NodeJs**: Ferramenta para teste de APIs.
+- **Node.js**: Ambiente de execução JavaScript no lado do servidor.
+- **Express.js**: Framework para construção de APIs RESTful.
+- **MongoDB**: Banco de dados NoSQL utilizado para persistência de dados.
+- **Postman**: Ferramenta para testar e documentar APIs.
+- **Dotenv**: Gerenciamento de variáveis de ambiente.
 
 ---
 
 ## 📂 Estrutura do Projeto
 
-O repositório está organizado da seguinte forma:
+A estrutura do repositório foi reorganizada para seguir boas práticas de desenvolvimento back-end com Node.js:
 
 ```
 ImersaoAluraBackEnd/
-├── src/
-│   ├── main/
-│   │   ├── java/ (código fonte)
-│   │   └── resources/ (configurações e templates)
-│   └── test/ (testes unitários)
-├── .gitignore
-├── README.md
-└── pom.xml (configurações do Maven)
+├── node_modules/          (dependências instaladas pelo npm)
+├── src/                   (código-fonte principal do projeto)
+│   ├── config/            (arquivos de configuração, ex.: conexão com banco de dados)
+│   │   └── dbConfig.js
+│   ├── controller/        (lógica de controle e regras de negócio)
+│   │   └── postsController.js
+│   ├── model/             (definições de modelos de dados)
+│   │   └── postsModel.js
+│   └── routes/            (definições de rotas)
+│       └── postsRoutes.js
+├── .env                   (variáveis de ambiente)
+├── .gitignore             (arquivos/diretórios ignorados pelo Git)
+├── package.json           (metadados e dependências do projeto)
+├── package-lock.json      (versões específicas das dependências)
+├── README.md              (documentação do projeto)
+└── server.js              (arquivo principal para inicializar o servidor)
 ```
 
 ---
 
 ## 🌟 Funcionalidades
 
-1. **Criação de Endpoints**: Desenvolvimento de rotas para CRUD de entidades.
-2. **Validação de Dados**: Implementação de validações utilizando Bean Validation.
-3. **Conexão com Banco de Dados**: Configuração e persistência de dados no MySQL.
-4. **Testes de API**: Utilização do Postman para simular requisições HTTP.
+1. **CRUD de Posts**: Implementação de operações para criar, listar, atualizar e deletar posts.
+2. **Conexão com MongoDB**: Configuração para persistência de dados utilizando o banco de dados NoSQL.
+3. **Estruturação de Rotas**: Organização modular de rotas utilizando o Express.js.
+4. **Gerenciamento de Variáveis de Ambiente**: Uso do `dotenv` para proteger informações sensíveis.
 
 ---
 
@@ -47,9 +53,8 @@ ImersaoAluraBackEnd/
 
 ### Pré-requisitos
 
-- **JDK** 17 ou superior
-- **Maven** instalado
-- **Mongo** configurado e em execução
+- **Node.js** 16+ instalado
+- **MongoDB** configurado e em execução localmente ou via cloud (ex.: MongoDB Atlas)
 
 ### Passos para Execução
 
@@ -58,40 +63,45 @@ ImersaoAluraBackEnd/
    git clone https://github.com/Carlosaleee/ImersaoAluraBackEnd.git
    ```
 
-2. Configure o arquivo `application.properties`:
-   - Localizado em `src/main/resources/application.properties`.
-   - Atualize as credenciais do banco de dados:
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-     ```properties
-     spring.datasource.url=jdbc:mysql://localhost:3306/sua_base_de_dados
-     spring.datasource.username=seu_usuario
-     spring.datasource.password=sua_senha
+3. Configure o arquivo `.env`:
+   - Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+     ```env
+     DB_URI=mongodb+srv://seu_usuario:sua_senha@cluster.mongodb.net/seu_banco
+     PORT=8080
      ```
 
-3. Compile e execute o projeto:
+4. Inicie o servidor:
    ```bash
-   mvn spring-boot:run
+   npm start
    ```
 
-4. Acesse a API em:
+5. Acesse os endpoints da API:
    ```
-   http://localhost:8080
+   http://localhost:8080/api/posts
    ```
 
 ---
 
 ## 🛠️ Testes
 
-Para executar os testes unitários:
-```bash
-mvn test
-```
+Para validar os endpoints, utilize o Postman ou ferramentas como o Thunder Client. Além disso, você pode criar testes unitários com frameworks como **Jest** (implementação futura).
 
 ---
 
 ## 🤝 Contribuições
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.
+Contribuições são bem-vindas! Para isso:
+1. Faça um fork do repositório.
+2. Crie um branch para a sua feature:
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Envie um pull request com suas alterações.
 
 ---
 
@@ -101,6 +111,8 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ---
 
-Desenvolvido com 💙 por <b>Carlos Alexandre da Silva</b> durante a Imersão Alura Back-End.
-```
+Desenvolvido  por [**Carlos Alexandre da Silva**](https://linktr.ee/CarlosAleee) durante a Imersão Alura Back-End.  
 
+Confira a [Alura](https://www.alura.com.br/) para mais imersões e cursos incríveis!
+
+--- 
