@@ -1,16 +1,13 @@
 import express from "express";
 import { listarPosts, postarNovoPost } from "../controller/postsController.js";
 
-// Habilita o parsing de JSON no corpo das requisições
-
-    const routes = (app) => {
-        app.use(express.json());
+const router = express.Router();
 
 // Rota para obter todos os posts
+router.get("/posts", listarPosts);
 
-    app.get("/posts", listarPosts);
-    app.post("/posts", postarNovoPost)
+// Rota para criar um novo post
+router.post("/", postarNovoPost);
 
-}
-
-export default routes;
+// Exporta o objeto Router
+export default router;
